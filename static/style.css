@@ -1,0 +1,239 @@
+/* ===== BODY ===== */
+body {
+    background-color: #0a0a0a;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ===== FORM BOX ===== */
+.form-box {
+    width: 350px;
+    margin: 80px auto;
+    background: rgba(20,20,30,0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+    opacity: 0;
+    transform: translateY(-60px);
+    animation: neonFadeIn 1s forwards;
+}
+
+/* Slide & fade animation */
+@keyframes neonFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== INPUTS & BUTTONS ===== */
+input, button {
+    width: 90%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: none;
+    background: #111;
+    color: #0ff;
+    font-size: 16px;
+    box-shadow: 0 0 5px #0ff;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: neonInputFade 0.6s forwards;
+}
+
+input:nth-child(1) { animation-delay: 0.3s; }
+input:nth-child(2) { animation-delay: 0.5s; }
+input:nth-child(3) { animation-delay: 0.7s; }
+button { animation-delay: 0.9s; cursor: pointer; }
+
+@keyframes neonInputFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button:hover {
+    box-shadow: 0 0 15px #0ff, 0 0 25px #0ff inset;
+    transform: scale(1.05);
+    background: #0ff1;
+}
+
+/* ===== LINKS ===== */
+a {
+    color: #0ff;
+    text-decoration: none;
+    text-shadow: 0 0 5px #0ff;
+    transition: all 0.3s;
+}
+a:hover {
+    color: #0ff;
+    transform: scale(1.05);
+}
+
+/* ===== CHAT BOX ===== */
+#chat-box {
+    width: 80%;
+    max-width: 650px;
+    height: 450px;
+    margin: 20px auto;
+    background: rgba(20,20,30,0.9);
+    padding: 15px;
+    overflow-y: auto;
+    border-radius: 12px;
+    border: 1px solid #0ff;
+    text-align: left;
+    box-shadow: 0 0 10px #0ff;
+}
+
+/* ===== CHAT MESSAGES ===== */
+.chat-message {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: neonSlideIn 0.5s forwards;
+    margin: 6px 0;
+    padding: 10px 14px;
+    border-radius: 15px;
+    max-width: 75%;
+    word-wrap: break-word;
+    font-weight: 500;
+}
+
+.chat-message.user {
+    background-color: rgba(0,255,255,0.2);
+    text-align: right;
+    margin-left: auto;
+    box-shadow: 0 0 10px #0ff;
+    transform: translateX(40px);
+}
+
+.chat-message.ai {
+    background-color: rgba(255,0,255,0.2);
+    margin-right: auto;
+    box-shadow: 0 0 10px #f0f;
+}
+
+@keyframes neonSlideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===== TYPING DOTS ===== */
+.typing {
+    font-style: italic;
+    color: #0ff;
+}
+
+.typing::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-left: 6px;
+    border-radius: 50%;
+    background-color: #0ff;
+    animation: neonBlink 1s infinite;
+}
+
+@keyframes neonBlink {
+    0%,50%,100% { opacity: 0; }
+    25%,75% { opacity: 1; }
+}
+
+/* ===== INPUT AREA ===== */
+.input-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#userInput {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #111;
+    color: #0ff;
+    box-shadow: 0 0 5px #0ff;
+}
+
+#sendBtn {
+    margin-left: 10px;
+    background-color: #0ff;
+    color: #000;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+#sendBtn:hover {
+    box-shadow: 0 0 20px #0ff, 0 0 30px #0ff inset;
+    transform: scale(1.05);
+}
+.alert-box {
+    background: rgba(255, 0, 0, 0.3);
+    color: #ff4d4d;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-shadow: 0 0 6px red;
+    font-size: 14px;
+    animation: neonFadeIn 0.7s forwards;
+    box-shadow: 0 0 10px red;
+}
+
+/* ---------- Flash message styles (neon) ---------- */
+.flash-container {
+  width: 90%;
+  margin: 10px auto 0;
+  text-align: center;
+}
+
+.flash {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: inline-block;
+  min-width: 220px;
+}
+
+/* category: error */
+.flash-error {
+  background: rgba(255, 0, 70, 0.12);
+  color: #ff7b9a;
+  box-shadow: 0 0 12px rgba(255, 0, 70, 0.12);
+  border: 1px solid rgba(255,0,70,0.08);
+}
+
+/* category: success */
+.flash-success {
+  background: rgba(0, 255, 200, 0.06);
+  color: #80ffe0;
+  box-shadow: 0 0 10px rgba(0,255,200,0.06);
+  border: 1px solid rgba(0,255,200,0.04);
+}
+
+/* category: info */
+.flash-info {
+  background: rgba(0, 170, 255, 0.06);
+  color: #bff7ff;
+  box-shadow: 0 0 10px rgba(0,170,255,0.06);
+  border: 1px solid rgba(0,170,255,0.04);
+}
+
+/* nice fade-in */
+@keyframes flashIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.flash { animation: flashIn .45s ease forwards; }

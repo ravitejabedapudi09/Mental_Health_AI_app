@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+
+
+</head>
+<body>
+<h2>Hello {{ user_name }} 🌿</h2>
+
+<div id="chat-box"></div>
+
+<div class="input-area">
+    <input id="userInput" placeholder="How are you feeling today?">
+    <button id="sendBtn">Send</button>
+</div>
+
+<a href="/logout">Logout</a>
+
+<script src="/static/main.js"></script>
+</body>
+</html>
